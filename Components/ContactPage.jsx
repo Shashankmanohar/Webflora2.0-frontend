@@ -160,7 +160,7 @@ const ContactPage = () => {
                     className="text-2xl sm:text-3xl md:text-4xl font-boldonse text-white tracking-wide hover:text-orange-600 hover:translate-x-2 transition-transform duration-300 block"
                     aria-label="Email Webflora Technologies"
                   >
-                    webfloratechnologies@gmail.com
+                    hello.webflora@gmail.com
                   </p>
                 </div>
 
