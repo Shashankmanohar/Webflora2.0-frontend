@@ -173,7 +173,7 @@ const ContactPage = () => {
                     className="text-2xl sm:text-3xl md:text-4xl font-boldonse text-white uppercase tracking-wide hover:text-orange-600 hover:translate-x-2 transition-transform duration-300 block"
                     aria-label="Call Webflora Technologies"
                   >
-                    +918540814729
+                    +91 8863081255
                   </a>
                 </div>
               </div>
