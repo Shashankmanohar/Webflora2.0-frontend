@@ -4,37 +4,43 @@ import DotGrid from "@/Components/DotGrid";
 import Footer from "@/Components/FooterSection";
 import Header from "@/Components/Header";
 import ProjectComp from "@/Components/ProjectComp";
+import FAQSection from "@/Components/FAQSection";
+import TrustBadges from "@/Components/TrustBadges";
+import ServicesCard from "@/Components/ServicesCard";
+import ProcessSection from "@/Components/ProcessSection";
 
 /* =========================
    PAGE-LEVEL SEO METADATA
 ========================= */
 
 export const metadata = {
-  title: "Web Development & Digital Solutions Company",
+  title: "Best Software & Web Development Company in Patna | Webflora Technologies",
   description:
-    "Webflora Technologies is a modern web development and digital solutions agency delivering high-performance websites, scalable applications, and premium user experiences — a complete one-stop solution for all business digital growth needs.",
+    "Webflora Technologies is a leading software and web development company in Patna, India. We build custom software, SaaS products, high-performance websites, and scalable digital solutions to grow your business.",
   keywords: [
-    "Web development",
-    "Digital solutions",
-    "Next.js websites",
-    "React development",
-    "Tailwind CSS",
-    "Framer Motion animations",
-    "Website design",
-    "App development",
-    "Patna web agency",
-    "India digital agency"
+    "Software development company in Patna",
+    "Best software agency Bihar",
+    "Custom software solutions",
+    "Web development company in Patna",
+    "SaaS product development",
+    "School management software",
+    "Billing software development",
+    "App development company Bihar",
+    "Digital marketing agency Patna",
+    "Webflora Technologies"
   ],
   alternates: {
     canonical: "https://webfloratechnologies.com/",
   },
   openGraph: {
     title:
-      "Webflora Technologies a complete and best Digital Solutions Company in Patna & India.",
+      "Best Software & Web Development Company in Patna | Webflora Technologies",
     description:
-      "We build blazing-fast websites and scalable digital products using modern technologies.",
+      "We build custom software, scalable apps, and blazing-fast websites using modern technologies.",
     url: "https://webfloratechnologies.com/",
     type: "website",
+    siteName: "Webflora Technologies",
+    locale: "en_IN",
     images: [
       {
         url: "/webflora-og.png",
@@ -44,6 +50,12 @@ export const metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Webflora Technologies | Best Software & Web Agency",
+    description: "Building the future of software and digital business in Patna & India.",
+    images: ["/webflora-og.png"],
+  },
 };
 
 /* =========================
@@ -52,15 +64,44 @@ export const metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "LocalBusiness",
   name: "Webflora Technologies",
   url: "https://webfloratechnologies.com",
   logo: "https://webfloratechnologies.com/logo.png",
+  image: "https://webfloratechnologies.com/webflora-og.png",
   description:
-    "Webflora Technologies provides modern web development, scalable applications, and digital solutions for growing businesses.",
+    "Webflora Technologies is a premier software and web development company in Patna, providing custom software, apps, and complete digital growth services.",
+  telephone: "+918863081255",
+  email: "webfloratechnologies@gmail.com",
+  priceRange: "$$",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Patna",
+    addressRegion: "Bihar",
+    addressCountry: "IN",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 25.5941,
+    longitude: 85.1376,
+  },
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ],
+    opens: "10:00",
+    closes: "19:00",
+  },
   sameAs: [
     "https://www.linkedin.com/company/webflora-technologies",
     "https://www.instagram.com/webfloratech",
+    "https://twitter.com/company/webfloratechnologies",
   ],
 };
 
@@ -104,27 +145,32 @@ export default function Page() {
       </main>
 
       {/* =========================
-          ABOUT SECTION
+          SERVICES SECTION
+          (Moved below hero for immediate visibility)
       ========================= */}
-      <section className="py-20" aria-labelledby="about-heading">
-        <h2 id="about-heading" className="sr-only">
-          About Webflora Technologies
+      <section className="py-20" aria-labelledby="services-heading">
+        <h2 id="services-heading" className="sr-only">
+          Our Digital Services
         </h2>
-        <About />
+        <ServicesCard />
       </section>
 
       {/* =========================
-          PROJECTS / WORK SECTION
+          PROCESS SECTION
       ========================= */}
-      <section
-        className="py-20 lg:px-40 md:px-20 px-5"
-        aria-labelledby="projects-heading"
-      >
-        <h2 id="projects-heading" className="sr-only">
-          Our Projects and Case Studies
-        </h2>
-        <ProjectComp />
-      </section>
+      <ProcessSection />
+
+
+
+      {/* =========================
+          TRUST BADGES
+      ========================= */}
+      <TrustBadges />
+
+      {/* =========================
+          FAQ SECTION
+      ========================= */}
+      <FAQSection />
 
       {/* =========================
           FOOTER

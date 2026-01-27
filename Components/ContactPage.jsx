@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { submitForm } from "@/lib/api";
 
 /* =========================
@@ -40,13 +40,48 @@ const ContactPage = () => {
     type: null, // 'success' | 'error' | null
     message: "",
   });
+  const [charCount, setCharCount] = useState(0);
+
+  // Load saved draft on mount
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const savedDraft = localStorage.getItem("webflora_contact_draft");
+      if (savedDraft) {
+        try {
+          const draft = JSON.parse(savedDraft);
+          setFormData(draft);
+          setCharCount(draft.message?.length || 0);
+        } catch (error) {
+          console.error("Failed to load draft:", error);
+        }
+      }
+    }
+  }, []);
+
+  // Auto-save draft
+  useEffect(() => {
+    if (typeof window !== "undefined" && (formData.name || formData.email || formData.contactNumber || formData.message)) {
+      const timer = setTimeout(() => {
+        localStorage.setItem("webflora_contact_draft", JSON.stringify(formData));
+      }, 1000); // Save after 1 second of inactivity
+
+      return () => clearTimeout(timer);
+    }
+  }, [formData]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+
+    // Update character count for message field
+    if (name === "message") {
+      setCharCount(value.length);
+    }
+
     setFormData((prev) => ({
       ...prev,
       [name === "phone" ? "contactNumber" : name]: value,
     }));
+
     if (submitStatus.type) {
       setSubmitStatus({ type: null, message: "" });
     }
@@ -89,7 +124,7 @@ const ContactPage = () => {
         setSubmitStatus({
           type: "success",
           message:
-            "Thank you! We’ll contact you soon.",
+            "✅ Thank you! We'll respond within 24 hours.",
         });
         setFormData({
           name: "",
@@ -97,6 +132,12 @@ const ContactPage = () => {
           contactNumber: "",
           message: "",
         });
+        setCharCount(0);
+
+        // Clear saved draft
+        if (typeof window !== "undefined") {
+          localStorage.removeItem("webflora_contact_draft");
+        }
       } else {
         setSubmitStatus({
           type: "error",
@@ -122,13 +163,13 @@ const ContactPage = () => {
       />
 
       <section
-        className="bg-black text-white lg:w-[80vw] lg:h-[140vh] h-fit overflow-hidden relative  lg:top-20 top-3"
+        className="bg-black text-white w-full min-h-screen relative overflow-hidden"
         aria-labelledby="contact-heading"
       >
-        <div className="max-w-[170rem] mx-auto px-6 sm:px-8 md:px-10 lg:px-1 pt-20 pb-20 relative z-10">
-          
+        <div className="max-w-[170rem] mx-auto px-6 sm:px-8 md:px-10 lg:px-20 pt-32 pb-20 relative z-10">
+
           {/* --- SECTION 1: MASSIVE HEADER --- */}
-          <div className="flex flex-col justify-start items-start mb-16 sm:mb-20">
+          <div className="flex flex-col justify-start items-start mb-10 sm:mb-16">
             <p className="text-orange-600 font-bold tracking-[0.2em] uppercase mb-4 pl-1 animate-pulse text-sm md:text-base font-sans">
               Start The Conversation
             </p>
@@ -147,12 +188,12 @@ const ContactPage = () => {
             </h1>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20">
-            
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20 items-start">
+
             {/* --- LEFT COLUMN --- */}
-            <div className="lg:col-span-5 flex flex-col justify-between">
-              <div className="flex flex-col gap-6 lg:relative bottom-10">
-                <div className="w-full max-w-[93vw] break-all">
+            <div className="lg:col-span-5 flex flex-col justify-between mt-10">
+              <div className="flex flex-col gap-8">
+                <div className="w-full break-all">
                   <p className="text-zinc-500 font-bold text-xs uppercase tracking-[0.2em] font-sans mb-2">
                     Email Us
                   </p>
@@ -169,10 +210,11 @@ const ContactPage = () => {
                     Call Us
                   </p>
                   <a
-                    href="tel:+918540814729"
+                    href="tel:+918863081255"
                     className="text-2xl sm:text-3xl md:text-4xl font-boldonse text-white uppercase tracking-wide hover:text-orange-600 hover:translate-x-2 transition-transform duration-300 block"
                     aria-label="Call Webflora Technologies"
                   >
+
                     +91 8863081255
                   </a>
                 </div>
@@ -180,7 +222,7 @@ const ContactPage = () => {
             </div>
 
             {/* --- RIGHT COLUMN (FORM) --- */}
-            <div className="lg:col-span-7 lg:relative z-30 bottom-110 lg:ml-[-8vw] lg:mt-80 left-30">
+            <div className="lg:col-span-7 lg:mt-0 mt-10">
               <form
                 onSubmit={handleSubmit}
                 className="bg-zinc-900/40 p-6 sm:p-8 md:p-10 border border-zinc-800/40 backdrop-blur-sm rounded-lg relative overflow-hidden max-w-3xl"
@@ -190,11 +232,10 @@ const ContactPage = () => {
 
                 {submitStatus.type && (
                   <div
-                    className={`mb-6 p-4 rounded-lg border ${
-                      submitStatus.type === "success"
-                        ? "bg-green-900/20 border-green-600/50 text-green-400"
-                        : "bg-red-900/20 border-red-600/50 text-red-400"
-                    }`}
+                    className={`mb-6 p-4 rounded-lg border ${submitStatus.type === "success"
+                      ? "bg-green-900/20 border-green-600/50 text-green-400"
+                      : "bg-red-900/20 border-red-600/50 text-red-400"
+                      }`}
                   >
                     <p className="text-sm md:text-base font-medium">
                       {submitStatus.message}
@@ -240,23 +281,34 @@ const ContactPage = () => {
                 </div>
 
                 <div className="mb-8">
-                  <label
-                    htmlFor="message"
-                    className="block text-orange-600 font-bold tracking-[0.15em] uppercase text-sm mb-3 font-sans"
-                  >
-                    Your Message
-                  </label>
+                  <div className="flex justify-between items-center mb-3">
+                    <label
+                      htmlFor="message"
+                      className="block text-orange-600 font-bold tracking-[0.15em] uppercase text-sm font-sans"
+                    >
+                      Your Message
+                    </label>
+                    <span className="text-xs text-zinc-500">
+                      {charCount} / 1000 characters
+                    </span>
+                  </div>
                   <textarea
                     id="message"
                     name="message"
                     rows={6}
                     required
+                    maxLength={1000}
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Tell us about your project goals, timeline, and budget..."
-                    className="w-full bg-transparent border-b-4 border-zinc-800 text-lg sm:text-xl md:text-2xl text-white placeholder-zinc-600 focus:outline-none focus:border-orange-600 transition-all duration-300 font-boldonse tracking-wide uppercase resize-none py-2"
+                    className="w-full bg-transparent border-b-4 border-zinc-800 text-sm sm:text-base md:text-lg text-white placeholder-zinc-600 focus:outline-none focus:border-orange-600 transition-all duration-300 font-boldonse tracking-wide uppercase resize-none py-2"
                     aria-required="true"
                   ></textarea>
+                  {charCount > 900 && (
+                    <p className="text-xs text-orange-500 mt-1">
+                      {1000 - charCount} characters remaining
+                    </p>
+                  )}
                 </div>
 
                 <button
@@ -309,7 +361,7 @@ const InputGroup = ({ label, id, name, type, required, placeholder, value, onCha
         placeholder={placeholder}
         value={value || ""}
         onChange={onChange}
-        className="w-full bg-transparent border-b-4 border-zinc-800 py-3 text-lg sm:text-xl md:text-2xl text-white placeholder-zinc-600 focus:outline-none focus:border-orange-600 transition-all duration-300 font-boldonse tracking-wide uppercase"
+        className="w-full bg-transparent border-b-4 border-zinc-800 py-3 text-sm sm:text-base md:text-lg text-white placeholder-zinc-600 focus:outline-none focus:border-orange-600 transition-all duration-300 font-boldonse tracking-wide uppercase"
         aria-required={required}
         aria-label={label}
         pattern={type === "tel" ? "[0-9+() -]{6,}" : undefined}

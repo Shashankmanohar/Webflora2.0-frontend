@@ -1,4 +1,5 @@
 import Footer from "@/Components/FooterSection";
+import About from "@/Components/About";
 import React from "react";
 
 /* =========================
@@ -7,20 +8,18 @@ import React from "react";
 ========================= */
 export const metadata = {
   title:
-    "About Webflora Technologies | End-to-End Digital Services Company in Patna & India",
+    "About Webflora Technologies | Visionary Tech Partners in Patna & India",
   description:
-    "Webflora Technologies is an end-to-end digital services company based in Patna, India, providing complete solutions including websites, applications, automation, branding, and technology required for business growth.",
+    "Learn about Webflora Technologies - a team of innovators building the future of digital business in Patna. Driven by Design, Novelty & Technology.",
   keywords: [
-    "Webflora Technologies",
+    "Webflora Technologies profile",
+    "Digital agency Patna team",
     "About Webflora",
-    "Digital services company",
-    "End-to-end solutions",
-    "Web development Patna",
-    "India web agency",
-    "Application development",
-    "Automation solutions",
-    "Branding and design",
-    "Technology partner"
+    "Web development company history",
+    "Tech startups in Bihar",
+    "Digital transformation partners",
+    "Software company vision",
+    "Patna IT services"
   ],
   alternates: {
     canonical: "https://webfloratechnologies.com/about",
@@ -34,9 +33,9 @@ export const metadata = {
   },
   openGraph: {
     title:
-      "Webflora Technologies | One-Stop End-to-End Digital Services Company",
+      "About Webflora: Driven by Design, Novelty & Tech",
     description:
-      "A technology-driven company delivering complete digital solutions required for businesses to grow — from websites to scalable systems.",
+      "We are more than just developers; we are your growth partners. Discover our mission to revolutionize the digital landscape in India.",
     url: "https://webfloratechnologies.com/about",
     siteName: "Webflora Technologies",
     type: "website",
@@ -52,15 +51,21 @@ const jsonLd = {
   "@type": "Organization",
   name: "Webflora Technologies",
   url: "https://webfloratechnologies.com",
+  logo: "https://webfloratechnologies.com/logo.png",
   description:
-    "Webflora Technologies is an end-to-end digital services company providing complete digital solutions required for business growth.",
+    "Webflora Technologies is an end-to-end digital services company in Patna driven by design and technology innovation.",
+  email: "webfloratechnologies@gmail.com",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Patna",
     addressRegion: "Bihar",
     addressCountry: "IN",
   },
-  areaServed: ["Patna", "Bihar", "India"],
+  sameAs: [
+    "https://www.linkedin.com/company/webflora-technologies",
+    "https://www.instagram.com/webfloratech",
+    "https://twitter.com/company/webfloratechnologies"
+  ],
 };
 
 const AboutPage = () => {
@@ -76,7 +81,7 @@ const AboutPage = () => {
           HERO SECTION (UNCHANGED)
       ========================= */}
       <main
-        className="w-full h-screen bg-gradient-to-tr from-orange-500 via-red-700/80 to-black text-white px-6 sm:px-10"
+        className="w-full min-h-screen bg-gradient-to-tr from-orange-500 via-red-700/80 to-black text-white px-6 sm:px-10 pb-32"
         aria-labelledby="about-hero-heading"
       >
         {/* SINGLE H1 — REQUIRED FOR SEO */}
@@ -102,58 +107,14 @@ const AboutPage = () => {
       </main>
 
       {/* =========================
-          ABOUT / STATS SECTION
-          (DESIGN SAME, TAGS FIXED)
+          MISSION & VISION
       ========================= */}
-      <section
-        className="w-full mx-auto h-screen bg-black border-t-1 border-white relative bottom-30 lg:bottom-11 md:bottom-37 rounded-t-4xl"
-        aria-labelledby="about-section-heading"
-      >
-        <div className="lg:w-7xl md:w-2xl mx-auto h-50 relative top-25 ">
-          {/* CHANGED h1 → h2 (STYLE SAME) */}
-          <h2
-            id="about-section-heading"
-            className="text-6xl lg:text-9xl md:text-8xl px-5 pt-10 text-white"
-          >
-            About <span className="text-orange-600">us</span>.
-          </h2>
-
-          <div>
-            <h3 className="lg:text-4xl md:text-3xl pl-5 pt-5 md:pl-5 md:pt-20 text-orange-600 leading-30">
-              Number of
-            </h3>
-            <p className="lg:text-9xl text-5xl pl-5 lg:pl-4 md:text-6xl md:pl-5 relative bottom-9 lg:static md:static text-white">
-              Projects <span className="text-stroke">:</span> 9
-            </p>
-          </div>
-
-          <div className="">
-            <h3 className="lg:text-4xl md:text-3xl pl-5 pt-5 md:pl-5 md:pt-20 text-orange-600 relative bottom-7">
-              Years of
-            </h3>
-            <p className="lg:text-9xl text-[39px] pl-5 lg:pl-4 md:text-6xl md:pl-5 relative bottom-9 lg:static md:static leading-15 lg:leading-29 text-white">
-              Experience <span className="text-stroke">:</span> 12
-              <sup className="text-xs text-orange-600">combined</sup>
-            </p>
-          </div>
-
-          <div>
-            <h3 className="lg:text-4xl md:text-3xl pl-5 pt-5 md:pl-5 md:pt-20 text-orange-600 relative bottom-7">
-              Number of
-            </h3>
-            <p className="lg:text-9xl text-[39px] pl-5 lg:pl-4 md:text-6xl md:pl-5 relative bottom-9 lg:static md:static leading-15 lg:leading-29 text-white">
-              Brains <span className="text-stroke">:</span> 5
-            </p>
-          </div>
-        </div>
-      </section>
+      <About />
 
       {/* =========================
           FOOTER (UNCHANGED)
       ========================= */}
-      <div className=" relative bottom-40 lg:top-96">
-        <Footer />
-      </div>
+      <Footer />
     </>
   );
 };

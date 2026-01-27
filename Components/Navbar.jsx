@@ -27,7 +27,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="w-full fixed z-50 px-5 lg:px-8 xl:px-[8%] flex items-center justify-between lg:mt-10">
+      <nav className="w-full fixed z-[50] px-5 lg:px-8 xl:px-[8%] flex items-center justify-between lg:mt-10">
         {/* LOGO */}
         <a href="/">
           <Image
@@ -52,7 +52,7 @@ const Navbar = () => {
           <div
             href="call"
             className="hidden lg:flex items-center text-center gap-3 px-8 rounded-full py-2 backdrop-blur-sm bg-orange-400/20 border border-orange-500/20 whitespace-nowrap">
-            <a href="tel:+918540814729" className="hover:scale-110 duration-200 transition">
+            <a href="tel:+918863081255" className="hover:scale-110 duration-200 transition">
               Call us <SlScreenSmartphone className="inline text-3xl font-bold" />
             </a>
           </div>
@@ -85,7 +85,7 @@ const Navbar = () => {
             <li><Link className={isActive("/contact")} href="/contact" onClick={closeMenu}>Contact us.</Link></li>
 
             <li>
-              <a href="tel:+918540814729" className="bg-black px-4 text-lg py-3 border border-orange-600 text-orange-600 rounded-full text-center mt-5 w-full">
+              <a href="tel:+918863081255" className="bg-black px-4 text-lg py-3 border border-orange-600 text-orange-600 rounded-full text-center mt-5 w-full">
                 Call us
               </a>
             </li>

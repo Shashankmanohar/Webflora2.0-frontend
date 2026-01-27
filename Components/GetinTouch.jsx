@@ -1,9 +1,16 @@
+"use client";
 import Link from "next/link";
 import React from "react";
+import { usePathname } from "next/navigation";
 
 const GetinTouch = () => {
+  const pathname = usePathname();
+
+  // Hide on contact page
+  if (pathname === "/contact") return null;
+
   return (
-    <div className="fixed z-50 bottom-6 right-4 sm:bottom-8 sm:right-8 lg:bottom-10 lg:right-12">
+    <div className="fixed z-50 bottom-24 left-4 sm:bottom-28 sm:left-8 lg:bottom-32 lg:left-12">
       <Link
         href="/contact"
         aria-label="Get in touch"

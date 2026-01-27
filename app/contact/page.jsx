@@ -1,26 +1,24 @@
 import React from "react";
 import ContactPage from "../../Components/ContactPage";
-
+import Footer from "@/Components/FooterSection";
 /* =========================
    PAGE LEVEL SEO METADATA
    (Company, not agency)
 ========================= */
 export const metadata = {
   title:
-    "Contact Webflora Technologies | End-to-End Digital Services Company in Patna & India",
+    "Contact Webflora | Hire Best Web Developers in Patna & India",
   description:
-    "Get in touch with Webflora Technologies, an end-to-end digital services company based in Patna, India. We provide complete digital solutions required for business growth — from websites to scalable technology systems.",
+    "Ready to grow? Contact Webflora Technologies for top-rated web development, app creation, and digital marketing services in Patna. Get a free quote today.",
   keywords: [
-    "Contact Webflora",
-    "Webflora Technologies",
-    "Digital services contact",
-    "Website inquiry",
-    "App development inquiry",
-    "Patna web agency",
-    "India digital solutions",
-    "Business growth contact",
-    "Tech partner contact",
-    "Web development contact"
+    "Contact Webflora Technologies",
+    "Hire web developers Patna",
+    "App development cost India",
+    "Digital marketing enquiry",
+    "Website design quote",
+    "Software company contact number",
+    "Best tech support Patna",
+    "Start a project"
   ],
   alternates: {
     canonical: "https://webfloratechnologies.com/contact",
@@ -34,9 +32,9 @@ export const metadata = {
   },
   openGraph: {
     title:
-      "Contact Webflora Technologies | One-Stop Digital Services Company",
+      "Get in Touch | Webflora Technologies Patna",
     description:
-      "Contact Webflora Technologies to discuss complete digital solutions for your business growth.",
+      "Let's discuss your project. We transform ideas into scalable digital reality. Call or Email us now.",
     url: "https://webfloratechnologies.com/contact",
     siteName: "Webflora Technologies",
     type: "website",
@@ -54,7 +52,18 @@ const jsonLd = {
   url: "https://webfloratechnologies.com/contact",
   description:
     "Contact page for Webflora Technologies, an end-to-end digital services company providing complete solutions for business growth.",
-  areaServed: ["Patna", "Bihar", "India"],
+  mainEntity: {
+    "@type": "LocalBusiness",
+    name: "Webflora Technologies",
+    telephone: "+918863081255",
+    email: "webfloratechnologies@gmail.com",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Patna",
+      addressRegion: "Bihar",
+      addressCountry: "IN",
+    },
+  },
 };
 
 const Page = () => {
@@ -71,7 +80,7 @@ const Page = () => {
           (DESIGN UNCHANGED)
       ========================= */}
       <main
-        className="w-full h-screen"
+        className="w-full min-h-screen"
         aria-labelledby="contact-page-heading"
       >
         {/* SEO H1 (SCREEN-READER ONLY, NO DESIGN IMPACT) */}
@@ -79,10 +88,13 @@ const Page = () => {
           Contact Webflora Technologies – End-to-End Digital Services Company
         </h1>
 
-        <div className="lg:max-w-7xl mx-auto h-screen">
+        <div className="lg:max-w-7xl mx-auto min-h-screen">
           <ContactPage />
         </div>
       </main>
+      <footer className="mt-20">
+        <Footer />
+      </footer>
     </>
   );
 };

@@ -2,6 +2,23 @@
 @import "tw-animate-css";
 @custom-variant dark (&:is(.dark *));
 
+:root {
+  font-family: var(--font-outfit), sans-serif;
+}
+
+.font-boldonse {
+  font-family: var(--font-boldonse), sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-boldonse), sans-serif;
+}
+
 
 
 .text-tilt-shadow {
@@ -9,7 +26,8 @@
 }
 
 .text-tilt-shadow:hover {
-  text-shadow: 3px 6px 5px rgba(0, 0, 0, 0.6); /* niche + tilted */
+  text-shadow: 3px 6px 5px rgba(0, 0, 0, 0.6);
+  /* niche + tilted */
 }
 
 
@@ -17,21 +35,29 @@
   -webkit-text-stroke: 1px #ffffff;
   color: transparent;
 }
+
 .text-stroke {
   color: transparent;
-  -webkit-text-stroke: 2px #ff6600; /* orange outline */
+  -webkit-text-stroke: 2px #ff6600;
+  /* orange outline */
 }
+
 .text-stroke2 {
   color: transparent;
-  -webkit-text-stroke: 2px #000000; /* orange outline */
+  -webkit-text-stroke: 2px #000000;
+  /* orange outline */
 }
+
 .text-stroke3 {
   color: transparent;
-  -webkit-text-stroke: 2px #000000; /* orange outline */
+  -webkit-text-stroke: 2px #000000;
+  /* orange outline */
 }
+
 .text-stroke4 {
   color: transparent;
-  -webkit-text-stroke: 0.9px #ff6600; /* orange outline */
+  -webkit-text-stroke: 0.9px #ff6600;
+  /* orange outline */
 }
 
 
@@ -40,6 +66,7 @@
     opacity: 0;
     transform: translateY(40px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -50,8 +77,24 @@
   animation: slideUp 2s ease-out forwards;
 }
 
-* {
-  cursor: none !important;
+/* Custom cursor only on desktop with mouse */
+@media (hover: hover) and (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 html.lenis,
@@ -200,7 +243,65 @@ html {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Custom Scrollbar for Card Containers */
+.card::-webkit-scrollbar {
+  display: none;
+  /* Hide scrollbar */
+}
+
+/* For Firefox */
+.card {
+  scrollbar-width: none;
+  /* Hide scrollbar */
+}
+
+/* For IE and Edge */
+.card {
+  -ms-overflow-style: none;
+  /* Hide scrollbar */
+}
+
+.card::-webkit-scrollbar-thumb {
+  background: #ff6600;
+  border-radius: 10px;
+}
+
+.card::-webkit-scrollbar-thumb:hover {
+  background: #ff8833;
+}
+
+/* Smooth scroll behavior */
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+/* Carousel Card Styles - Smooth scaling for center cards */
+.project-card,
+.service-card {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+  will-change: transform;
+}
+
+/* Carousel edge gradient to show more content */
+.card {
+  position: relative;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100%;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.8), transparent);
+  pointer-events: none;
+  z-index: 5;
 }

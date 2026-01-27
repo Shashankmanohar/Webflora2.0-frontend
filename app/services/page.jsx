@@ -1,5 +1,7 @@
 import Footer from "@/Components/FooterSection";
+import ProjectComp from "@/Components/ProjectComp";
 import ServicesCard from "@/Components/ServicesCard";
+import ProcessSection from "@/Components/ProcessSection";
 import React from "react";
 
 /* =========================
@@ -7,20 +9,19 @@ import React from "react";
 ========================= */
 export const metadata = {
   title:
-    "Digital Services for Business Growth | Webflora Technologies | Patna & India",
+    "Software & Digital Services: Web, App, SaaS & Marketing | Webflora Patna",
   description:
-    "Webflora Technologies is a one-stop end-to-end digital services company based in Patna, India, delivering websites, applications, automation, branding, and scalable technology solutions required for business growth.",
+    "Webflora Technologies offers top-tier software services in Patna: Custom Software Development, SaaS Products, Mobile Apps, ERP Systems, and ROI-driven Digital Marketing.",
   keywords: [
-    "Digital services",
-    "Website development",
-    "Application development",
-    "ERP systems",
-    "Automation solutions",
-    "Digital marketing",
-    "Business growth",
-    "Patna tech company",
-    "India digital agency",
-    "Webflora services"
+    "Software development services Patna",
+    "SaaS product development",
+    "Custom CRM software",
+    "School management system",
+    "Website development services Patna",
+    "Best app developers in Bihar",
+    "ERP software company Patna",
+    "Business automation solutions",
+    "Digital marketing services India"
   ],
   alternates: {
     canonical: "https://webfloratechnologies.com/services",
@@ -34,9 +35,9 @@ export const metadata = {
   },
   openGraph: {
     title:
-      "End-to-End Digital Services for Business Growth | Webflora Technologies",
+      "Webflora Services: Software, Web, App & Marketing Solutions",
     description:
-      "Complete digital services required for businesses to grow — from digital assets to scalable systems.",
+      "Transform your business with our end-to-end software solutions. From custom SaaS to complex ERPs, we build it all.",
     url: "https://webfloratechnologies.com/services",
     siteName: "Webflora Technologies",
     type: "website",
@@ -45,22 +46,53 @@ export const metadata = {
 };
 
 /* =========================
-   STRUCTURED DATA
+   STRUCTURED DATA (ITEM LIST)
 ========================= */
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "Webflora Technologies",
-  url: "https://webfloratechnologies.com",
-  description:
-    "Webflora Technologies is a one-stop end-to-end digital services company providing complete digital solutions for business growth.",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Patna",
-    addressRegion: "Bihar",
-    addressCountry: "IN",
-  },
-  areaServed: ["Patna", "Bihar", "India"],
+  "@type": "ItemList",
+  itemListElement: [
+    {
+      "@type": "Service",
+      position: 1,
+      name: "Website Development",
+      description: "High-performance, SEO-friendly custom websites.",
+      provider: {
+        "@type": "LocalBusiness",
+        name: "Webflora Technologies",
+      },
+    },
+    {
+      "@type": "Service",
+      position: 2,
+      name: "Application Development",
+      description: "Scalable mobile and web applications (Android/iOS).",
+      provider: {
+        "@type": "LocalBusiness",
+        name: "Webflora Technologies",
+      },
+    },
+    {
+      "@type": "Service",
+      position: 3,
+      name: "ERP Systems",
+      description: "Custom ERP solutions for business management.",
+      provider: {
+        "@type": "LocalBusiness",
+        name: "Webflora Technologies",
+      },
+    },
+    {
+      "@type": "Service",
+      position: 4,
+      name: "Digital Marketing",
+      description: "Result-oriented SEO, SMM, and PPC campaigns.",
+      provider: {
+        "@type": "LocalBusiness",
+        name: "Webflora Technologies",
+      },
+    },
+  ],
 };
 
 const Page = () => {
@@ -74,7 +106,8 @@ const Page = () => {
 
       <main aria-labelledby="services-hero-heading">
         {/* HERO SECTION */}
-        <div className="relative w-full h-screen bg-gradient-to-tr from-[#ff5900] via-black/90 to-[#ff4d01] pt-24 md:pt-32 lg:pt-40 px-6 sm:px-10">
+        {/* HERO SECTION */}
+        <div className="relative w-full min-h-screen bg-gradient-to-tr from-[#ff5900] via-black/90 to-[#ff4d01] pt-24 md:pt-32 lg:pt-40 px-6 sm:px-10 pb-40">
           <h1
             id="services-hero-heading"
             className="text-6xl sm:text-5xl md:text-[12vw] lg:text-[12vw] xl:text-[7.2vw] leading-[1.4] md:leading-[1.3] lg:leading-[1.4] text-left relative top-6 md:top-10 lg:top-6 lg:left-40"
@@ -88,35 +121,23 @@ const Page = () => {
           </h1>
         </div>
 
-        {/* SERVICES SECTION */}
+        {/* SERVICES CAROUSEL */}
+        <div className="relative z-10 bg-black pt-10">
+          <ServicesCard />
+        </div>
+
+        {/* PROCESS SECTION */}
+        <ProcessSection />
+
+        {/* WORK/PROJECTS SECTION */}
         <section
-          className="w-full h-screen relative bottom-3 xs:bottom-10 md:bottom-29 lg:bottom-29 bg-black border-t-2 border-orange-600 rounded-xl px-6 md:px-20 lg:px-40"
+          className="w-full relative z-10 bg-black border-t-2 border-orange-600 rounded-xl px-6 md:px-20 lg:px-40 pb-20"
           aria-labelledby="services-section-heading"
         >
-          {/* H2 (STYLE SAME AS BEFORE) */}
-          <h2
-            id="services-section-heading"
-            className="w-full relative top-25 text-center text-6xl sm:text-5xl md:text-7xl lg:text-8xl leading-tight md:leading-[1.2] lg:leading-[1.3] px-6 md:px-10 py-6 "
-          >
-            What we are
-            <span className="text-orange-600 text-stroke-hover select-none">
-              {" "}
-              good
-            </span>{" "}
-            at.
-          </h2>
-
-          <p className="text-xl relative top-23 mb-10 md:text-4xl lg:text-3xl leading-9 md:leading-15 lg:leading-16 text-center text-gray-400 mt-1 md:mt-6 lg:mt-5 font-extralight">
-            We <span className="text-white">Transform</span> Your Vision Into a
-            High-Performing Digital Reality.
-          </p>
-
-          <ServicesCard />
+          <ProjectComp />
         </section>
 
-        <footer className="relative top-100">
-          <Footer />
-        </footer>
+        <Footer />
       </main>
     </>
   );

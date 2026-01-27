@@ -56,7 +56,7 @@ const About = () => {
           className="px-1 py-4 text-lg md:text-4xl lg:text-4xl leading-12 md:leading-13 lg:leading-17 text-gray-400"
           style={{ WebkitClipPath: "inset(0 100% 0 0)" }}
         >
-          at <span className="text-orange-600">webflora</span>, Our journey began
+          At <span className="text-orange-600">Webflora</span>, our journey began
           with a vision to transform how brands connect with their audiences,
           and we've grown into a team of forward-thinkers and industry
           disruptors. We blend passion with expertise to craft remarkable
@@ -66,7 +66,7 @@ const About = () => {
         </p>
 
         <h1 className="text-5xl lg:text-7xl px-1 py-5 leading-15 mt-15">
-          about the <span className="text-orange-600">brand</span>
+          About the <span className="text-orange-600">Brand</span>
         </h1>
 
         <p
@@ -74,14 +74,44 @@ const About = () => {
           className="px-1 py-5 text-lg md:text-4xl lg:text-4xl leading-12 md:leading-13 lg:leading-17 text-gray-400"
           style={{ WebkitClipPath: "inset(0 100% 0 0)" }}
         >
-          at <span className="text-orange-600">webflora</span>, we are a dynamic
+          At <span className="text-orange-600">Webflora</span>, we are a dynamic
           team of creative visionaries and strategic thinkers dedicated to
           pushing boundaries and delivering exceptional results. We thrive on
           collaboration, affiliate, embracing challenges with enthusiasm and a
           commitment to crafting solutions that resonate and inspire creativity.
         </p>
+
+        <h1 className="text-5xl lg:text-7xl px-1 py-5 leading-15 mt-15">
+          Our <span className="text-orange-600">Mission</span>
+        </h1>
+
+        <p
+          ref={(el) => (pRefs.current[2] = el)}
+          className="px-1 py-5 text-lg md:text-4xl lg:text-4xl leading-12 md:leading-13 lg:leading-17 text-gray-400"
+          style={{ WebkitClipPath: "inset(0 100% 0 0)" }}
+        >
+          At <span className="text-orange-600">Webflora</span>, our mission is to empower businesses
+          to thrive in the digital era by delivering cutting-edge technology,
+          scalable solutions, and design-driven experiences that create lasting
+          impact and measurable growth.
+        </p>
+
+        <h1 className="text-5xl lg:text-7xl px-1 py-5 leading-15 mt-15">
+          Our <span className="text-orange-600">Vision</span>
+        </h1>
+
+        <p
+          ref={(el) => (pRefs.current[3] = el)}
+          className="px-1 py-5 text-lg md:text-4xl lg:text-4xl leading-12 md:leading-13 lg:leading-17 text-gray-400"
+          style={{ WebkitClipPath: "inset(0 100% 0 0)" }}
+        >
+          At <span className="text-orange-600">Webflora</span>, our vision is to redefine the future
+          of digital engagement, becoming the most trusted partner for brands
+          seeking to innovate, scale, and lead in an ever-evolving
+          technological landscape.
+        </p>
       </div>
-      <div className="w-1/2 mx-auto bg-orange-600 h-1 mt-30"></div>
+
     </div>
   );
 };
