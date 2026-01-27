@@ -32,7 +32,7 @@ const Footer = () => {
             <Link
               href="/contact"
               aria-label="Get in touch"
-              className="group relative w-24 h-24 sm:w-28 sm:h-28 md:w-36 md:h-36 lg:w-40 lg:h-40 bg-orange-600 rounded-full flex items-center justify-center overflow-hidden transform transition-transform hover:scale-105 shrink-0"
+              className="group relative w-24 h-24 sm:w-28 sm:h-28 md:w-36 md:h-36 lg:w-40 lg:h-40 bg-orange-600 rounded-full flex items-center justify-center overflow-hidden transform transition-transform hover:scale-105 active:scale-95 shrink-0"
             >
               <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transform transition-transform duration-300 ease-out"> </div>
               <span className="relative z-10 font-boldonse text-sm sm:text-base md:text-lg lg:text-2xl text-black uppercase text-center leading-none">
@@ -71,7 +71,7 @@ const Footer = () => {
 
               <button
                 type="submit"
-                className="w-full md:w-auto px-4 py-3 uppercase font-bold text-sm tracking-widest text-orange-600 border border-transparent hover:text-white hover:bg-orange-600 transition-colors"
+                className="w-full md:w-auto px-4 py-3 uppercase font-bold text-sm tracking-widest text-orange-600 border border-transparent hover:text-white hover:bg-orange-600 transition-colors active:scale-95 transition-transform duration-200"
                 aria-label="Subscribe to newsletter"
               >
                 Subscribe

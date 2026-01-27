@@ -129,6 +129,8 @@ const Page = () => {
         {/* PROCESS SECTION */}
         <ProcessSection />
 
+
+
         {/* WORK/PROJECTS SECTION */}
         <section
           className="w-full relative z-10 bg-black border-t-2 border-orange-600 rounded-xl px-6 md:px-20 lg:px-40 pb-20"

@@ -87,7 +87,7 @@ const ServicesCard = () => {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <section aria-label="Digital services offered by Webflora Technologies" className="relative py-16">
-        <h2 className="lg:text-7xl md:text-4xl text-4xl leading-14 w-full text-center mb-12">
+        <h2 className="lg:text-7xl md:text-4xl text-4xl leading-14 w-full text-center mb-12 font-bold">
           Our <span className="text-orange-600">Services</span>
         </h2>
         <p className="text-center text-gray-400 text-lg mb-12 -mt-8">
@@ -130,7 +130,7 @@ const ServicesCard = () => {
                         <CardItem translateZ={30} className="pointer-events-auto w-full">
                           <a
                             href="/contact"
-                            className="block text-center px-4 py-2 bg-orange-600 text-black text-sm rounded-full font-medium hover:bg-gray-200 transition"
+                            className="block text-center px-4 py-2 bg-orange-600 text-black text-sm rounded-full font-medium hover:bg-gray-200 transition active:scale-95 transition-transform duration-200"
                             aria-label={`Book a consultation for ${item.title}`}
                           >
                             Book a call
@@ -146,7 +146,7 @@ const ServicesCard = () => {
             {/* Navigation Buttons */}
             <button
               onClick={handlePrev}
-              className="absolute left-4 z-40 bg-orange-600 hover:bg-orange-700 text-white p-4 rounded-full transition-all shadow-xl hover:scale-110"
+              className="absolute left-4 z-40 bg-orange-600 hover:bg-orange-700 text-white p-4 rounded-full transition-all shadow-xl hover:scale-110 active:scale-90"
               aria-label="Previous service"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -156,7 +156,7 @@ const ServicesCard = () => {
 
             <button
               onClick={handleNext}
-              className="absolute right-4 z-40 bg-orange-600 hover:bg-orange-700 text-white p-4 rounded-full transition-all shadow-xl hover:scale-110"
+              className="absolute right-4 z-40 bg-orange-600 hover:bg-orange-700 text-white p-4 rounded-full transition-all shadow-xl hover:scale-110 active:scale-90"
               aria-label="Next service"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -21,7 +21,7 @@ const Header = () => {
           direction="top"
           className="text-5xl md:text-8xl xl:text-10xl lg:text-[13rem]  mb-7 lg:mt-0 lg:leading-none text-center font-bold tracking-wide text-white"
         />
-        <h1 className="animate-slideUp text-lg lg:text-4xl mt-2 lg:mt-10 w-fit text-center tracking-wider leading-11 md:leading-16">
+        <h1 className="animate-slideUp text-lg lg:text-4xl mt-2 lg:mt-10 w-fit text-center tracking-wider leading-11 md:leading-16 font-bold">
           A <span className="bg-orange-600 lg:px-4 px-2 rounded-full">One</span>{" "}
           Stop Digital Solution for All Your Business{" "}
           <span className="bg-orange-600 lg:px-4 px-2 rounded-full">Need</span>.

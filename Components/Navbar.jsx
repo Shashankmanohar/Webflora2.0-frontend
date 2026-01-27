@@ -31,11 +31,11 @@ const Navbar = () => {
         {/* LOGO */}
         <a href="/">
           <Image
-            width={200}
-            height={10}
+            width={400}
+            height={70}
             alt="logo"
             src="/webflora-logo.svg"
-            className="cursor-pointer mr-14"
+            className="cursor-pointer mr-14 w-auto h-22"
           />
         </a>
 
@@ -51,7 +51,7 @@ const Navbar = () => {
         <div className="md:hidden lg:flex">
           <div
             href="call"
-            className="hidden lg:flex items-center text-center gap-3 px-8 rounded-full py-2 backdrop-blur-sm bg-orange-400/20 border border-orange-500/20 whitespace-nowrap">
+            className="hidden lg:flex items-center text-center gap-3 px-8 rounded-full py-2 backdrop-blur-sm bg-orange-400/20 border border-orange-500/20 whitespace-nowrap active:scale-95 transition-transform duration-200">
             <a href="tel:+918863081255" className="hover:scale-110 duration-200 transition">
               Call us <SlScreenSmartphone className="inline text-3xl font-bold" />
             </a>
@@ -85,7 +85,7 @@ const Navbar = () => {
             <li><Link className={isActive("/contact")} href="/contact" onClick={closeMenu}>Contact us.</Link></li>
 
             <li>
-              <a href="tel:+918863081255" className="bg-black px-4 text-lg py-3 border border-orange-600 text-orange-600 rounded-full text-center mt-5 w-full">
+              <a href="tel:+918863081255" className="bg-black px-4 text-lg py-3 border border-orange-600 text-orange-600 rounded-full text-center mt-5 w-full block active:scale-95 transition-transform duration-200">
                 Call us
               </a>
             </li>

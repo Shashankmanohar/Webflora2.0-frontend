@@ -1,119 +1,97 @@
 "use client";
 import React, { useState } from "react";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { FiPlus, FiMinus } from "react-icons/fi";
 
 const FAQSection = () => {
     const [openIndex, setOpenIndex] = useState(null);
 
-    const faqs = [
-        {
-            question: "What services does Webflora Technologies offer?",
-            answer:
-                "We offer end-to-end digital services including Website Development, Application Development, ERP Software Solutions, Digital Marketing, and Business Automation. We're your one-stop solution for all digital needs.",
-        },
-        {
-            question: "How long does it take to build a website?",
-            answer:
-                "Typically, a standard website takes 2-4 weeks, while complex applications can take 6-12 weeks. We'll provide you with a detailed timeline during our initial consultation based on your specific requirements.",
-        },
-        {
-            question: "Do you provide ongoing support after project completion?",
-            answer:
-                "Yes! We offer comprehensive maintenance and support packages. This includes bug fixes, updates, security patches, and technical support to ensure your digital assets run smoothly.",
-        },
-        {
-            question: "What is your pricing structure?",
-            answer:
-                "Our pricing is project-based and depends on scope, complexity, and timeline. We offer flexible payment plans and provide detailed quotes after understanding your requirements. Contact us for a free consultation and quote.",
-        },
-        {
-            question: "Can you work with clients outside Patna/India?",
-            answer:
-                "Absolutely! While we're based in Patna, we work with clients globally. We use modern collaboration tools and maintain clear communication throughout the project lifecycle.",
-        },
-        {
-            question: "Do you offer custom solutions or use templates?",
-            answer:
-                "We create custom solutions tailored to your specific needs. While we may use frameworks and libraries for efficiency, every project is uniquely designed to match your brand and requirements.",
-        },
-        {
-            question: "What technologies do you use?",
-            answer:
-                "We use modern, industry-standard technologies including Next.js, React, Node.js, MongoDB, and more. We choose the best tech stack based on your project requirements for optimal performance and scalability.",
-        },
-        {
-            question: "How do I get started?",
-            answer:
-                "Simply fill out our contact form, call us at +918863081255, or message us on WhatsApp. We'll schedule a free consultation to discuss your project and provide you with a detailed proposal.",
-        },
-    ];
-
-    const toggleFAQ = (index) => {
+    const toggleAccordion = (index) => {
         setOpenIndex(openIndex === index ? null : index);
     };
 
+    const faqs = [
+        {
+            question: "What technologies do you use for website development?",
+            answer:
+                "We primarily use Next.js and React for building high-performance, SEO-friendly, and scalable websites. For styling, we use Tailwind CSS, and for animations, we leverage Framer Motion to create immersive user experiences.",
+        },
+        {
+            question: "Can you build custom ERP software for my business?",
+            answer:
+                "Yes! We specialize in building custom ERP (Enterprise Resource Planning) solutions tailored to your specific business workflows. whether you need inventory management, HRMS, billing systems, or end-to-end automation, we build it from scratch to fit your needs perfectly.",
+        },
+        {
+            question: "Do you develop mobile applications for both Android and iOS?",
+            answer:
+                "Absolutely. We develop cross-platform mobile applications using modern frameworks that work seamlessly on both Android and iOS devices. This ensures a consistent user experience and faster time-to-market for your app.",
+        },
+        {
+            question: "How does your digital marketing help my business grow?",
+            answer:
+                "Our digital marketing strategies are data-driven. We focus on SEO to improve your organic ranking, targeted PPC campaigns for immediate leads, and Social Media Marketing to build brand authority. We don't just bring traffic; we focus on conversion and ROI.",
+        },
+        {
+            question: "What is the typical timeline for a project?",
+            answer:
+                "Timelines depend on the project scope. A standard business website takes 1-2 weeks, while complex custom software or mobile apps can take 4-8 weeks. We provide a detailed roadmap and milestone breakdown during our initial consultation.",
+        },
+        {
+            question: "Do you provide support after the project is live?",
+            answer:
+                "Yes, we offer dedicated support and maintenance packages. From server monitoring and bug fixes to feature updates and security patches, we ensure your digital assets continue to run smoothly long after launch.",
+        },
+    ];
+
     return (
-        <section className="w-full bg-black text-white py-20 px-6 md:px-20 lg:px-40">
-            <div className="max-w-5xl mx-auto">
-                {/* Header */}
-                <div className="text-center mb-16">
-                    <p className="text-orange-600 font-bold tracking-[0.2em] uppercase mb-4 text-sm animate-pulse">
-                        Got Questions?
-                    </p>
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-                        Frequently Asked{" "}
-                        <span className="text-orange-600">Questions</span>
-                    </h2>
-                    <p className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto">
-                        Find answers to common questions about our services, process, and
-                        pricing.
-                    </p>
-                </div>
+        <section className="bg-black text-white w-full py-20 px-4 md:px-10 lg:px-20 border-t border-zinc-800">
+            <div className="max-w-7xl mx-auto">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+                    {/* LEFT SIDE: Heading */}
+                    <div className="flex flex-col justify-start">
+                        <p className="text-orange-600 font-bold tracking-[0.2em] uppercase mb-4 text-sm font-sans">
+                            FAQ
+                        </p>
+                        <h2 className="text-4xl md:text-5xl lg:text-7xl font-boldonse uppercase leading-tight">
+                            Common <br /> <span className="text-stroke">Questions</span>
+                        </h2>
+                        <p className="mt-6 text-gray-400 text-lg md:text-xl max-w-md">
+                            Everything you need to know about working with Webflora Technologies.
+                        </p>
+                    </div>
 
-                {/* FAQ Items */}
-                <div className="space-y-4">
-                    {faqs.map((faq, index) => (
-                        <div
-                            key={index}
-                            className="border border-zinc-800 rounded-lg overflow-hidden bg-zinc-900/40 hover:border-orange-600/50 transition-all duration-300"
-                        >
-                            <button
-                                onClick={() => toggleFAQ(index)}
-                                className="w-full flex items-center justify-between p-6 text-left focus:outline-none group"
-                                aria-expanded={openIndex === index}
-                            >
-                                <h3 className="text-lg md:text-xl font-semibold pr-8 group-hover:text-orange-600 transition-colors">
-                                    {faq.question}
-                                </h3>
-                                <span className="flex-shrink-0 text-orange-600 text-xl">
-                                    {openIndex === index ? <FaChevronUp /> : <FaChevronDown />}
-                                </span>
-                            </button>
-
-                            {/* Answer */}
+                    {/* RIGHT SIDE: Accordion */}
+                    <div className="flex flex-col">
+                        {faqs.map((faq, index) => (
                             <div
-                                className={`overflow-hidden transition-all duration-300 ${openIndex === index ? "max-h-96" : "max-h-0"
-                                    }`}
+                                key={index}
+                                className="border-b border-zinc-700 last:border-none"
                             >
-                                <div className="px-6 pb-6">
-                                    <p className="text-zinc-300 text-base md:text-lg leading-relaxed">
+                                <button
+                                    onClick={() => toggleAccordion(index)}
+                                    className="w-full py-6 flex items-center justify-between text-left group focus:outline-none"
+                                >
+                                    <span className="text-lg md:text-2xl font-boldonse tracking-wide uppercase group-hover:text-orange-600 transition-colors duration-300 pr-4">
+                                        {faq.question}
+                                    </span>
+                                    <span className="text-orange-600 flex-shrink-0">
+                                        {openIndex === index ? (
+                                            <FiMinus className="w-6 h-6 md:w-8 md:h-8" />
+                                        ) : (
+                                            <FiPlus className="w-6 h-6 md:w-8 md:h-8" />
+                                        )}
+                                    </span>
+                                </button>
+                                <div
+                                    className={`overflow-hidden transition-all duration-500 ease-in-out ${openIndex === index ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0"
+                                        }`}
+                                >
+                                    <p className="pb-6 text-base md:text-lg text-gray-300 leading-relaxed font-sans">
                                         {faq.answer}
                                     </p>
                                 </div>
                             </div>
-                        </div>
-                    ))}
-                </div>
-
-                {/* CTA */}
-                <div className="mt-12 text-center">
-                    <p className="text-zinc-400 mb-4">Still have questions?</p>
-                    <a
-                        href="/contact"
-                        className="inline-block bg-orange-600 text-black font-bold px-8 py-4 rounded-full uppercase tracking-wider hover:bg-white hover:text-orange-600 transition-all duration-300 hover:scale-105"
-                    >
-                        Contact Us
-                    </a>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>

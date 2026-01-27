@@ -38,7 +38,7 @@ const About = () => {
   return (
     <div className="w-full mx-auto border-t-2 rounded-t-2xl bg-black border-white relative z-10 bottom-10">
       <div className="mt-5 lg:pl-40 md:pl-10 pl-10">
-        <h1 className="text-5xl lg:text-8xl md:text-7xl xs:text-4xl leading-16 md:leading-26 lg:leading-32 bg-black px-1 py-5 ">
+        <h1 className="text-5xl lg:text-8xl md:text-7xl xs:text-4xl leading-16 md:leading-26 lg:leading-32 bg-black px-1 py-5 font-bold">
           We are <span className="text-orange-600">Webflora</span> the{" "}
           <span className="text-orange-600">Creative Company</span>.
         </h1>
@@ -47,7 +47,7 @@ const About = () => {
       <div className="w-[150px] lg:w-2xl h-2 mx-auto bg-orange-600 mt-10"></div>
 
       <div className="mt-5 lg:pl-40 md:pl-10 pl-10">
-        <h1 className="text-5xl lg:text-7xl px-1 py-5">
+        <h1 className="text-5xl lg:text-7xl px-1 py-5 font-bold">
           Who We <span className="text-orange-600">are..</span>
         </h1>
 
@@ -65,7 +65,7 @@ const About = () => {
           <span className="text-orange-600">.</span>
         </p>
 
-        <h1 className="text-5xl lg:text-7xl px-1 py-5 leading-15 mt-15">
+        <h1 className="text-5xl lg:text-7xl px-1 py-5 leading-15 mt-15 font-bold">
           About the <span className="text-orange-600">Brand</span>
         </h1>
 
@@ -81,7 +81,7 @@ const About = () => {
           commitment to crafting solutions that resonate and inspire creativity.
         </p>
 
-        <h1 className="text-5xl lg:text-7xl px-1 py-5 leading-15 mt-15">
+        <h1 className="text-5xl lg:text-7xl px-1 py-5 leading-15 mt-15 font-bold">
           Our <span className="text-orange-600">Mission</span>
         </h1>
 
@@ -96,7 +96,7 @@ const About = () => {
           impact and measurable growth.
         </p>
 
-        <h1 className="text-5xl lg:text-7xl px-1 py-5 leading-15 mt-15">
+        <h1 className="text-5xl lg:text-7xl px-1 py-5 leading-15 mt-15 font-bold">
           Our <span className="text-orange-600">Vision</span>
         </h1>
 
@@ -112,7 +112,7 @@ const About = () => {
         </p>
       </div>
 
-    </div>
+    </div >
   );
 };
 

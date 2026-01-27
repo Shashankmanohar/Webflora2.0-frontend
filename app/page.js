@@ -4,10 +4,11 @@ import DotGrid from "@/Components/DotGrid";
 import Footer from "@/Components/FooterSection";
 import Header from "@/Components/Header";
 import ProjectComp from "@/Components/ProjectComp";
-import FAQSection from "@/Components/FAQSection";
-import TrustBadges from "@/Components/TrustBadges";
 import ServicesCard from "@/Components/ServicesCard";
 import ProcessSection from "@/Components/ProcessSection";
+import TrustBadges from "@/Components/TrustBadges";
+import FAQSection from "@/Components/FAQSection";
+
 
 /* =========================
    PAGE-LEVEL SEO METADATA
@@ -160,8 +161,6 @@ export default function Page() {
       ========================= */}
       <ProcessSection />
 
-
-
       {/* =========================
           TRUST BADGES
       ========================= */}
@@ -171,6 +170,10 @@ export default function Page() {
           FAQ SECTION
       ========================= */}
       <FAQSection />
+
+
+
+
 
       {/* =========================
           FOOTER

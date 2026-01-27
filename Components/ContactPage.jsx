@@ -301,7 +301,7 @@ const ContactPage = () => {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Tell us about your project goals, timeline, and budget..."
-                    className="w-full bg-transparent border-b-4 border-zinc-800 text-sm sm:text-base md:text-lg text-white placeholder-zinc-600 focus:outline-none focus:border-orange-600 transition-all duration-300 font-boldonse tracking-wide uppercase resize-none py-2"
+                    className="w-full bg-transparent border-b-4 border-zinc-800 text-sm sm:text-base md:text-lg text-white placeholder-zinc-600 focus:outline-none focus:border-orange-600 transition-all duration-300 font-sans tracking-wide uppercase resize-none py-2"
                     aria-required="true"
                   ></textarea>
                   {charCount > 900 && (
@@ -361,7 +361,7 @@ const InputGroup = ({ label, id, name, type, required, placeholder, value, onCha
         placeholder={placeholder}
         value={value || ""}
         onChange={onChange}
-        className="w-full bg-transparent border-b-4 border-zinc-800 py-3 text-sm sm:text-base md:text-lg text-white placeholder-zinc-600 focus:outline-none focus:border-orange-600 transition-all duration-300 font-boldonse tracking-wide uppercase"
+        className="w-full bg-transparent border-b-4 border-zinc-800 py-3 text-sm sm:text-base md:text-lg text-white placeholder-zinc-600 focus:outline-none focus:border-orange-600 transition-all duration-300 font-sans tracking-wide uppercase"
         aria-required={required}
         aria-label={label}
         pattern={type === "tel" ? "[0-9+() -]{6,}" : undefined}

@@ -1,5 +1,4 @@
 import localFont from "next/font/local";
-import { Outfit } from "next/font/google"; // Importing a clean sans-serif font
 import "./globals.css";
 import Navbar from "@/Components/Navbar";
 import MouseFollower from "@/Components/Mousefollower";
@@ -7,6 +6,7 @@ import SmoothScrolling from "../Components/SmoothScrolling";
 import SplashScreen from "@/Components/SplashScreen";
 import GetinTouch from "@/Components/GetinTouch";
 import WhatsAppButton from "@/Components/WhatsAppButton";
+
 import BackToTop from "@/Components/BackToTop";
 
 // Define the display font (for Headings)
@@ -22,12 +22,7 @@ const boldonse = localFont({
   variable: "--font-boldonse", // Adding custom property for Tailwind/CSS usage
 });
 
-// Define the body font (for Paragraphs)
-const outfit = Outfit({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-outfit",
-});
+
 
 export const metadata = {
   metadataBase: new URL("https://webfloratechnologies.com"),
@@ -74,13 +69,17 @@ export const metadata = {
       "Your digital partner for innovative websites, apps, and branding solutions.",
     images: ["/webflora-og.png"],
   },
+  verification: {
+    google: "google-site-verification=YOUR_VERIFICATION_CODE",
+  },
+  category: "technology",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${outfit.variable} ${boldonse.variable} font-sans leading-10 overflow-x-hidden`}>
-        <MouseFollower suppressHydrationWarning />
+      <body className={`${boldonse.variable} font-sans leading-10 overflow-x-hidden`}>
+        <MouseFollower />
         <Navbar />
         <SmoothScrolling>
           <SplashScreen>

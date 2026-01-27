@@ -1,10 +1,9 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { FaWhatsapp } from "react-icons/fa";
-import { IoMdClose } from "react-icons/io";
 
 const WhatsAppButton = () => {
-  const [isVisible, setIsVisible] = useState(false);
   const [showTooltip, setShowTooltip] = useState(true);
 
   // Phone number (without + or spaces)
@@ -12,60 +11,74 @@ const WhatsAppButton = () => {
   const message = "Hi! I'm interested in your services.";
 
   useEffect(() => {
-    // Show button after 2 seconds
+    // Show tooltip initially, then hide after 5 seconds
     const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 2000);
-
-    // Hide tooltip after 5 seconds
-    const tooltipTimer = setTimeout(() => {
       setShowTooltip(false);
-    }, 7000);
+    }, 5000);
 
-    return () => {
-      clearTimeout(timer);
-      clearTimeout(tooltipTimer);
-    };
+    return () => clearTimeout(timer);
   }, []);
 
   const handleClick = () => {
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message
     )}`;
-    window.open(whatsappUrl, "_blank");
+    window.open(url, "_blank");
   };
 
-  if (!isVisible) return null;
-
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2">
+    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2 group">
       {/* Tooltip */}
-      {showTooltip && (
-        <div className="relative bg-white text-black px-4 py-3 rounded-lg shadow-lg max-w-[200px] animate-bounce">
-          <button
-            onClick={() => setShowTooltip(false)}
-            className="absolute -top-2 -right-2 bg-orange-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs hover:bg-orange-700"
-            aria-label="Close tooltip"
+      <AnimatePresence>
+        {showTooltip && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8, y: 10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.8, y: 10 }}
+            className="bg-white text-black px-4 py-2 rounded-lg shadow-lg text-sm font-medium mb-2 relative"
           >
-            <IoMdClose />
-          </button>
-          <p className="text-sm font-medium">
-            Need help? Chat with us on WhatsApp!
-          </p>
-        </div>
-      )}
+            Chat with us! 👋
+            {/* Triangle pointer */}
+            <div className="absolute -bottom-2 right-4 w-4 h-4 bg-white transform rotate-45"></div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-      {/* WhatsApp Button */}
-      <button
+      {/* Wave Animation */}
+      {/* Classic Ring Wave Animation */}
+      <motion.div
+        className="absolute bottom-0 right-0 w-14 h-14 rounded-full z-0 border-[3px] border-[#25D366]"
+        initial={{ scale: 1, opacity: 0.8 }}
+        animate={{ scale: 2.2, opacity: 0 }}
+        transition={{
+          duration: 2,
+          repeat: Infinity,
+          ease: "easeOut",
+        }}
+      />
+
+      {/* Button */}
+      <motion.button
         onClick={handleClick}
-        className="group relative bg-green-500 hover:bg-green-600 text-white rounded-full w-14 h-14 md:w-16 md:h-16 flex items-center justify-center shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110"
+        className="w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-lg ring-4 ring-transparent hover:ring-[#25D366]/30 relative z-10"
         aria-label="Chat on WhatsApp"
+        initial={{ y: 0 }}
+        animate={{
+          boxShadow: [
+            "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
+            "0 20px 25px -5px rgba(0, 0, 0, 0.2)",
+            "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
+          ],
+        }}
+        transition={{
+          duration: 2,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        whileHover={{ scale: 1.1 }}
       >
-        <FaWhatsapp className="text-3xl md:text-4xl" />
-
-        {/* Pulse animation */}
-        <span className="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-75"></span>
-      </button>
+        <FaWhatsapp className="text-3xl" />
+      </motion.button>
     </div>
   );
 };

@@ -25,7 +25,7 @@ export default function MouseFollower() {
   return (
     <motion.div
       // hidden on mobile/tablet, visible on desktop (lg+)
-      className="hidden lg:block fixed top-0 left-0 pointer-events-none z-[999999]"
+      className="hidden lg:block fixed top-0 left-0 pointer-events-none z-[9999]"
       style={{
         translateX: x,
         translateY: y,
