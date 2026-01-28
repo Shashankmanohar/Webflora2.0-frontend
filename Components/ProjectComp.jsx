@@ -20,17 +20,17 @@ const projectsData = [
   },
   {
     id: 3,
-    title: "Team Excellent Career Institute",
-    description: "Designed by us to highlight Team Excellent Career Institute's key courses, achievements, and academic excellence with a modern, student-focused layout.",
-    image: "/imag2.png",
-    link: "https://teamexcellentcareerinstitute.in/"
+    title: "Vidya Bharti School",
+    description: "A modern school website designed to showcase infrastructure, facilities, admissions process, and academic excellence with a clean and trustworthy layout.",
+    image: "/image3.png",
+    link: "https://vidyabhartischoolbihar.in/"
   },
   {
     id: 4,
-    title: "Team Excellent Career Institute",
-    description: "Designed by us to highlight Team Excellent Career Institute's key courses, achievements, and academic excellence with a modern, student-focused layout.",
-    image: "/imag2.png",
-    link: "https://teamexcellentcareerinstitute.in/"
+    title: "Ojal Premium Quality Store",
+    description: "An elegant e-commerce website crafted to highlight premium handcrafted crockery collections with a luxurious, minimal, and user-friendly design.",
+    image: "/image4.png",
+    link: "https://ojal.store/"
   }
 ];
 
