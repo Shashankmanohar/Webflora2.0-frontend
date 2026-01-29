@@ -61,7 +61,7 @@ const Navbar = () => {
         {/* MOBILE MENU BUTTON */}
         <button
           onClick={openMenu}
-          className="text-4xl font-bold mr-5 text-white block lg:hidden md:hidden xl:hidden"
+          className="text-4xl font-bold mr-5 text-white block lg:hidden"
         >
           <RxHamburgerMenu />
         </button>
@@ -69,7 +69,7 @@ const Navbar = () => {
         {/* MOBILE SIDE MENU */}
         <ul
           ref={sideMenuref}
-          className="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen backdrop-blur-lg bg-orange-400/5 transition duration-500"
+          className="flex lg:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen backdrop-blur-lg bg-orange-400/5 transition duration-500"
         >
           <div className="absolute right-10 top-12" onClick={closeMenu}>
             <button className="text-4xl text-white font-bold">

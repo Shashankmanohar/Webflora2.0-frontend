@@ -6,22 +6,22 @@ import { SlScreenSmartphone } from "react-icons/sl";
 const Header = () => {
   return (
     <div>
-      <div className="w-full h-screen flex flex-col items-center justify-center backdrop-blur-xs bg-orange-00/20 border border-orange-500/10">
+      <div className="w-full min-h-screen flex flex-col items-center justify-center backdrop-blur-xs bg-orange-00/20 border border-orange-500/10 pt-24 pb-16 px-4">
         <BlurText
           text="Webflora"
           delay={150}
           animateBy="letter"
           direction="top"
-          className="text-5xl md:text-8xl xl:text-10xl lg:text-[13rem] lg:mb-0 lg:leading-none text-center font-bold tracking-wide text-white"
+          className="text-5xl md:text-7xl lg:text-9xl xl:text-[10rem] 2xl:text-[13rem] lg:mb-0 lg:leading-none text-center font-bold tracking-wide text-white"
         />
         <BlurText
           text="Technologies"
           delay={150}
           animateBy="letters"
           direction="top"
-          className="text-5xl md:text-8xl xl:text-10xl lg:text-[13rem]  mb-7 lg:mt-0 lg:leading-none text-center font-bold tracking-wide text-white"
+          className="text-5xl md:text-7xl lg:text-9xl xl:text-[10rem] 2xl:text-[13rem] mb-7 lg:mt-0 lg:leading-none text-center font-bold tracking-wide text-white"
         />
-        <h1 className="animate-slideUp text-lg lg:text-4xl mt-2 lg:mt-10 w-fit text-center tracking-wider leading-11 md:leading-16 font-bold">
+        <h1 className="animate-slideUp text-base md:text-xl lg:text-3xl xl:text-4xl mt-2 lg:mt-10 max-w-4xl px-4 text-center tracking-wider leading-relaxed md:leading-relaxed font-bold">
           A <span className="bg-orange-600 lg:px-4 px-2 rounded-full">One</span>{" "}
           Stop Digital Solution for All Your Business{" "}
           <span className="bg-orange-600 lg:px-4 px-2 rounded-full">Need</span>.
