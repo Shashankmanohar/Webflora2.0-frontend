@@ -60,7 +60,7 @@ const WhatsAppButton = () => {
       {/* Button */}
       <motion.button
         onClick={handleClick}
-        className="w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-lg ring-4 ring-transparent hover:ring-[#25D366]/30 relative z-10"
+        className="w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-lg ring-4 ring-transparent hover:ring-[#25D366]/30 relative z-10 cursor-pointer"
         aria-label="Chat on WhatsApp"
         initial={{ y: 0 }}
         animate={{

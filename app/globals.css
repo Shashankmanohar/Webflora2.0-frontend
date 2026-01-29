@@ -6,6 +6,31 @@
   font-family: var(--font-outfit), sans-serif;
 }
 
+/* Hide scrollbar for all browsers */
+html {
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+}
+
+html::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Opera */
+}
+
+body {
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+}
+
+body::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Opera */
+}
+
 .font-boldonse {
   font-family: var(--font-boldonse), sans-serif;
 }
@@ -75,13 +100,6 @@ h6 {
 
 .animate-slideUp {
   animation: slideUp 2s ease-out forwards;
-}
-
-/* Custom cursor only on desktop with mouse */
-@media (hover: hover) and (pointer: fine) {
-  * {
-    cursor: none !important;
-  }
 }
 
 /* Respect user's motion preferences */

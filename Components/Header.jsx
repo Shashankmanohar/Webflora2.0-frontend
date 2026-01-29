@@ -6,7 +6,7 @@ import { SlScreenSmartphone } from "react-icons/sl";
 const Header = () => {
   return (
     <div>
-      <div className="w-full min-h-screen flex flex-col items-center justify-center backdrop-blur-xs bg-orange-00/20 border border-orange-500/10 pt-24 pb-16 px-4">
+      <div className="w-full min-h-screen flex flex-col items-center justify-center backdrop-blur-xs bg-orange-00/20 border border-orange-500/10 pt-24 pb-16 px-4 select-none cursor-default">
         <BlurText
           text="Webflora"
           delay={150}

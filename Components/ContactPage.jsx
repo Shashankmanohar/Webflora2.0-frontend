@@ -314,7 +314,7 @@ const ContactPage = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="relative w-full md:w-auto bg-orange-600 text-black font-boldonse text-xl sm:text-2xl md:text-3xl uppercase px-8 md:px-12 py-4 md:py-5 tracking-wider overflow-hidden transition-transform active:scale-95 hover:bg-white hover:text-orange-600 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="relative w-full md:w-auto bg-orange-600 text-black font-boldonse text-xl sm:text-2xl md:text-3xl uppercase px-8 md:px-12 py-4 md:py-5 tracking-wider overflow-hidden transition-transform active:scale-95 hover:bg-white hover:text-orange-600 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
                   aria-label="Send inquiry to Webflora Technologies"
                 >
                   <span className="relative z-10 flex items-center gap-3 justify-center">

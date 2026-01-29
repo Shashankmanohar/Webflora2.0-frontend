@@ -8,6 +8,7 @@ import ServicesCard from "@/Components/ServicesCard";
 import ProcessSection from "@/Components/ProcessSection";
 import TrustBadges from "@/Components/TrustBadges";
 import FAQSection from "@/Components/FAQSection";
+import TechStackMarquee from "@/Components/TechStackMarquee";
 
 
 /* =========================
@@ -143,6 +144,7 @@ export default function Page() {
         </div>
 
         <Header />
+        <TechStackMarquee />
       </main>
 
       {/* =========================

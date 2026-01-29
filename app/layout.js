@@ -1,12 +1,10 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/Components/Navbar";
-import MouseFollower from "@/Components/Mousefollower";
 import SmoothScrolling from "../Components/SmoothScrolling";
 import SplashScreen from "@/Components/SplashScreen";
 import GetinTouch from "@/Components/GetinTouch";
 import WhatsAppButton from "@/Components/WhatsAppButton";
-
 import BackToTop from "@/Components/BackToTop";
 
 // Define the display font (for Headings)
@@ -79,7 +77,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${boldonse.variable} font-sans leading-10 overflow-x-hidden`}>
-        <MouseFollower />
         <Navbar />
         <SmoothScrolling>
           <SplashScreen>
