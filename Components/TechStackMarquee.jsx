@@ -60,22 +60,29 @@ const TechStackMarquee = () => {
         let currentX = 0;
         let direction = -1; // -1 for left, 1 for right
         let lastScrollY = window.scrollY;
-        const speed = 1.5; // Constant speed
+        const speed = 1.5; // Constant speed for smooth scrolling
+
+        // Calculate the width of one set of items (1/3 of total since we duplicate 3 times)
+        const itemSetWidth = marquee.scrollWidth / 3;
 
         // Create the animation loop
         const animate = () => {
             // Apply continuous movement in current direction
             currentX += direction * speed;
 
-            // Wrap around for infinite scroll
-            const wrapPoint = -marquee.scrollWidth / 3;
-            if (currentX <= wrapPoint) {
-                currentX = 0;
-            } else if (currentX >= 0) {
-                currentX = wrapPoint;
+            // Seamless wrap-around for infinite scroll
+            // When moving left (negative direction)
+            if (currentX <= -itemSetWidth) {
+                currentX += itemSetWidth;
+            }
+            // When moving right (positive direction)
+            else if (currentX >= 0) {
+                currentX -= itemSetWidth;
             }
 
-            gsap.set(marquee, { x: currentX });
+            // Use direct CSS transform for smooth animation
+            marquee.style.transform = `translate3d(${currentX}px, 0, 0)`;
+
             animationRef.current = requestAnimationFrame(animate);
         };
 
